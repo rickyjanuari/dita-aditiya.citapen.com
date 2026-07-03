@@ -17,99 +17,81 @@
   <meta name="description" content={project?.description ?? 'Detail proyek Dita Aditiya'} />
 </svelte:head>
 
-<section class="pt-28 pb-20 bg-dark min-h-screen">
-  <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+<section class="page-inner bg-surface">
+  <div class="container-app container-app--medium">
     {#if project}
-      <!-- Breadcrumb -->
-      <a href="/portofolio" class="inline-flex items-center gap-2 text-gray-text hover:text-orange transition-colors text-sm mb-8">
+      <a href="/portofolio" class="inline-flex items-center gap-2 text-muted-fg hover:text-orange transition-colors text-sm mb-8 py-1">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M19 12H5m7-7-7 7 7 7"/>
         </svg>
         Kembali ke Portofolio
       </a>
 
-      <!-- Title -->
-      <span class="inline-block bg-orange/20 text-orange text-xs font-semibold px-3 py-1 rounded-full mb-4">
-        {project.category}
-      </span>
-      <h1 class="text-3xl sm:text-5xl text-light">{project.title}</h1>
+      <div class="stack">
+        <div>
+          <span class="site-badge site-badge--sm mb-5">{project.category}</span>
+          <h1 class="section-title section-title--lg">{project.title}</h1>
 
-      <!-- Meta -->
-      <div class="flex flex-wrap gap-6 mt-4 text-gray-text text-sm">
-        <span>⏱ {project.duration}</span>
-        <span>📍 {project.location}</span>
-        <span>📅 {project.year}</span>
-      </div>
-
-      <!-- Description -->
-      <div class="mt-8 text-gray-text leading-relaxed max-w-3xl">
-        <p>{project.description}</p>
-      </div>
-
-      <!-- Gallery -->
-      <div class="mt-12">
-        <h2 class="font-heading text-2xl text-light mb-6">Galeri Foto</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {#each project.gallery as img, i}
-            <div class="aspect-[4/3] rounded-lg bg-charcoal flex items-center justify-center overflow-hidden">
-              <div class="text-center text-gray-text">
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <rect x="3" y="3" width="18" height="18" rx="2"/>
-                  <circle cx="8.5" cy="8.5" r="1.5"/>
-                  <path d="m21 15-5-5L5 21"/>
-                </svg>
-                <span class="text-xs block mt-2">Foto {i + 1}</span>
-              </div>
-            </div>
-          {/each}
+          <div class="flex flex-wrap gap-x-6 gap-y-2 mt-5 text-muted-fg text-sm">
+            <span>⏱ {project.duration}</span>
+            <span>📍 {project.location}</span>
+            <span>📅 {project.year}</span>
+          </div>
         </div>
-      </div>
 
-      <!-- CTA -->
-      <div class="mt-16 p-8 bg-charcoal rounded-lg border border-dark text-center">
-        <h3 class="font-heading text-xl text-light">Tertarik dengan hasil seperti ini?</h3>
-        <p class="text-gray-text mt-2">Ceritakan proyek Anda ke saya. Gratis konsultasi.</p>
-        <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" class="btn-primary mt-4 inline-block">
-          Tanya via WhatsApp
-        </a>
-      </div>
+        <p class="text-muted-fg text-base leading-relaxed">{project.description}</p>
 
-      <!-- Other projects -->
-      <div class="mt-20">
-        <div class="hazard-stripe mb-12"></div>
-        <h2 class="text-2xl text-light text-center mb-8">Proyek <span class="text-orange">Lainnya</span></h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {#each otherProjects as p}
-            <ProjectCard slug={p.slug} title={p.title} category={p.category} duration={p.duration} cover={p.cover} />
-          {/each}
+        <div>
+          <h2 class="font-heading text-xl sm:text-2xl text-fg mb-5">Galeri Foto</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid-gap">
+            {#each project.gallery as img, i}
+              <div class="aspect-[4/3] rounded-xl bg-muted border border-border flex items-center justify-center overflow-hidden">
+                <div class="text-center text-muted-fg p-6">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                    <circle cx="8.5" cy="8.5" r="1.5"/>
+                    <path d="m21 15-5-5L5 21"/>
+                  </svg>
+                  <span class="text-xs block mt-2">Foto {i + 1}</span>
+                </div>
+              </div>
+            {/each}
+          </div>
+        </div>
+
+        <div class="info-panel text-center py-8 sm:py-10">
+          <h3 class="font-heading text-lg sm:text-xl text-fg">Tertarik dengan hasil seperti ini?</h3>
+          <p class="text-muted-fg mt-3 text-sm sm:text-base">Ceritakan proyek Anda ke saya. Gratis konsultasi.</p>
+          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" class="btn-primary mt-6 max-w-sm mx-auto">
+            Tanya via WhatsApp
+          </a>
+        </div>
+
+        <div>
+          <div class="section-divider"></div>
+          <div class="hazard-stripe"></div>
+          <h2 class="section-title text-center">Proyek <span class="text-orange">Lainnya</span></h2>
+
+          <p class="scroll-hint">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+            Geser untuk lihat proyek lainnya
+          </p>
+
+          <div class="card-carousel card-carousel--3">
+            {#each otherProjects as p}
+              <ProjectCard slug={p.slug} title={p.title} category={p.category} duration={p.duration} cover={p.cover} />
+            {/each}
+          </div>
         </div>
       </div>
     {:else}
-      <!-- Not found -->
-      <div class="text-center py-20">
-        <h1 class="text-3xl text-light">Proyek Tidak Ditemukan</h1>
-        <p class="text-gray-text mt-3">Proyek dengan slug "{($page.params.slug)}" tidak tersedia.</p>
-        <a href="/portofolio" class="btn-primary mt-6 inline-block">Kembali ke Portofolio</a>
+      <div class="text-center py-16 sm:py-24 stack items-center">
+        <h1 class="section-title">Proyek Tidak Ditemukan</h1>
+        <p class="text-muted-fg">Proyek dengan slug "{($page.params.slug)}" tidak tersedia.</p>
+        <a href="/portofolio" class="btn-primary max-w-xs">Kembali ke Portofolio</a>
       </div>
     {/if}
   </div>
 </section>
-
-<style>
-  .btn-primary {
-    display: inline-block;
-    background: var(--color-orange);
-    color: #fff;
-    padding: 0.75rem 1.5rem;
-    border-radius: 8px;
-    font-family: var(--font-body);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    transition: background 0.2s, transform 0.2s;
-  }
-  .btn-primary:hover {
-    background: var(--color-orange-dark);
-    transform: translateY(-2px);
-  }
-</style>

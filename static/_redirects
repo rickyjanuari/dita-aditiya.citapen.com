@@ -1,0 +1,4 @@
+# Cloudflare Pages redirects — https://developers.cloudflare.com/pages/configuration/redirects/
+# SPA fallback not needed: all routes are prerendered by SvelteKit
+
+/beranda  /  301

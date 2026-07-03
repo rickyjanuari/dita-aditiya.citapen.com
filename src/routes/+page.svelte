@@ -22,19 +22,25 @@
 
 <TimelineSection />
 
-<!-- Featured projects -->
-<section class="py-20 bg-charcoal">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <!-- Hazard stripe -->
-    <div class="hazard-stripe mb-16"></div>
+<section class="section-block bg-raised">
+  <div class="container-app">
+    <div class="section-divider"></div>
+    <div class="hazard-stripe"></div>
 
-    <div class="text-center max-w-2xl mx-auto mb-14">
-      <span class="text-orange text-sm font-semibold uppercase tracking-widest">Portofolio</span>
-      <h2 class="text-3xl sm:text-4xl text-light mt-2">Proyek <span class="text-orange">Unggulan</span></h2>
-      <p class="text-gray-text mt-3">Beberapa proyek yang sudah saya selesaikan. Klik untuk melihat detail lengkap.</p>
+    <div class="section-header">
+      <span class="section-label">Portofolio</span>
+      <h2 class="section-title">Proyek <span class="text-orange">Unggulan</span></h2>
+      <p class="section-desc">Beberapa proyek yang sudah saya selesaikan. Klik untuk melihat detail lengkap.</p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+    <p class="scroll-hint">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M5 12h14M12 5l7 7-7 7"/>
+      </svg>
+      Geser untuk lihat proyek lainnya
+    </p>
+
+    <div class="card-carousel card-carousel--3">
       {#each featuredProjects as project}
         <ProjectCard
           slug={project.slug}
@@ -46,8 +52,8 @@
       {/each}
     </div>
 
-    <div class="text-center">
-      <a href="/portofolio" class="btn-secondary">
+    <div class="flex justify-center content-gap--lg">
+      <a href="/portofolio" class="btn-secondary w-full sm:w-auto max-w-sm">
         Lihat Semua Proyek
       </a>
     </div>
@@ -56,57 +62,26 @@
 
 <TestimonialSection />
 
-<!-- CTA section -->
-<section class="py-20 bg-dark">
-  <div class="mx-auto max-w-3xl px-4 text-center">
-    <div class="hazard-stripe mb-12"></div>
-    <h2 class="text-3xl sm:text-5xl text-light">Siap Renovasi atau <span class="text-orange">Bangun Rumah</span> Impian Anda?</h2>
-    <p class="text-gray-text mt-4 text-lg">Konsultasi gratis, tanpa biaya. Saya dengarkan dulu kebutuhan Anda, baru kita buat rencana.</p>
-    <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-      <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" class="btn-primary">
-        Chat WhatsApp Sekarang
-      </a>
-      <a href="/kontak" class="btn-secondary">
-        Lihat Info Kontak
-      </a>
+<section class="section-block bg-blueprint border-t border-border">
+  <div class="container-app container-app--narrow text-center">
+    <div class="section-divider"></div>
+    <div class="hazard-stripe"></div>
+
+    <div class="stack items-center">
+      <h2 class="section-title section-title--lg">
+        Siap Renovasi atau <span class="text-orange">Bangun Rumah</span> Impian Anda?
+      </h2>
+      <p class="section-desc">
+        Konsultasi gratis, tanpa biaya. Saya dengarkan dulu kebutuhan Anda, baru kita buat rencana.
+      </p>
+      <div class="btn-group btn-group--center w-full max-w-md">
+        <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" class="btn-primary">
+          Chat WhatsApp Sekarang
+        </a>
+        <a href="/kontak" class="btn-secondary">
+          Lihat Info Kontak
+        </a>
+      </div>
     </div>
   </div>
 </section>
-
-<style>
-  .btn-primary {
-    display: inline-block;
-    background: var(--color-orange);
-    color: #fff;
-    padding: 0.75rem 1.5rem;
-    border-radius: 8px;
-    font-family: var(--font-body);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    text-align: center;
-    transition: background 0.2s, transform 0.2s;
-  }
-  .btn-primary:hover {
-    background: var(--color-orange-dark);
-    transform: translateY(-2px);
-  }
-  .btn-secondary {
-    display: inline-block;
-    background: transparent;
-    color: var(--color-light);
-    padding: 0.75rem 1.5rem;
-    border-radius: 8px;
-    border: 2px solid var(--color-charcoal);
-    font-family: var(--font-body);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    text-align: center;
-    transition: border-color 0.2s, color 0.2s;
-  }
-  .btn-secondary:hover {
-    border-color: var(--color-orange);
-    color: var(--color-orange);
-  }
-</style>

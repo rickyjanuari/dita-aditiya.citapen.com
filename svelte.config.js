@@ -4,12 +4,23 @@ import adapter from '@sveltejs/adapter-static';
 const config = {
   kit: {
     adapter: adapter({
-      fallback: null,
+      fallback: undefined,
       pages: 'build',
       assets: 'build',
-      precompress: false,
+      precompress: true,
       strict: true
-    })
+    }),
+    prerender: {
+      handleHttpError({ path, message }) {
+        // Placeholder project images may not exist yet during build
+        if (path.startsWith('/images/projects/')) {
+          console.warn(`[prerender] Missing asset (skipped): ${path}`);
+          return;
+        }
+        throw new Error(message);
+      },
+      handleMissingId: 'warn'
+    }
   }
 };
 
