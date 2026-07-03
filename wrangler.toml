@@ -3,5 +3,9 @@ name = "dita-aditiya-site"
 pages_build_output_dir = "./build"
 compatibility_date = "2024-11-01"
 
+# Required when deploy command is `npx wrangler deploy` (Workers Builds)
+[assets]
+directory = "./build"
+
 [vars]
 # Public env vars can be added here if needed later
