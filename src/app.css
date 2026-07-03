@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dark: #0d0d0d;
+  --color-charcoal: #1a1a1a;
+  --color-orange: #ff5722;
+  --color-orange-dark: #d84315;
+  --color-safety-yellow: #ffd600;
+  --color-light: #f7f5f2;
+  --color-gray-text: #6b6b6b;
+
+  --font-heading: "Bebas Neue", sans-serif;
+  --font-body: "Space Grotesk", sans-serif;
+}
+
+/* Reset & base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Hazard stripe pattern */
+.hazard-stripe {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    var(--color-safety-yellow),
+    var(--color-safety-yellow) 8px,
+    var(--color-dark) 8px,
+    var(--color-dark) 16px
+  );
+  height: 6px;
+  width: 100%;
+}
+
+/* Tape corner effect */
+.tape-corner {
+  position: relative;
+}
+.tape-corner::after {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 245, 215, 0.75);
+  transform: rotate(-3deg);
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+/* Text ticker */
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.ticker-track {
+  animation: ticker 20s linear infinite;
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

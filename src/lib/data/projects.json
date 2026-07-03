@@ -1,0 +1,95 @@
+[
+  {
+    "slug": "renovasi-rumah-pak-budi",
+    "title": "Renovasi Rumah Pak Budi",
+    "category": "Renovasi",
+    "duration": "3 bulan",
+    "year": 2025,
+    "location": "Citapen, Bogor",
+    "description": "Renovasi total rumah tipe 45 meliputi pembongkaran atap, penggantian keramik, pemasangan plafon gypsum, dan pengecatan interior-eksterior.",
+    "cover": "/images/projects/renovasi-budi-cover.jpg",
+    "gallery": [
+      "/images/projects/renovasi-budi-1.jpg",
+      "/images/projects/renovasi-budi-2.jpg",
+      "/images/projects/renovasi-budi-3.jpg"
+    ],
+    "featured": true
+  },
+  {
+    "slug": "bangun-rumah-bu-ani",
+    "title": "Pembangunan Rumah Bu Ani",
+    "category": "Bangun Baru",
+    "duration": "6 bulan",
+    "year": 2025,
+    "location": "Bogor Timur",
+    "description": "Pembangunan rumah tinggal 2 lantai dari nol, mencakup pondasi, struktur beton bertulang, dinding bata ringan, instalasi listrik dan pipa, hingga finishing.",
+    "cover": "/images/projects/bangun-ani-cover.jpg",
+    "gallery": [
+      "/images/projects/bangun-ani-1.jpg",
+      "/images/projects/bangun-ani-2.jpg",
+      "/images/projects/bangun-ani-3.jpg"
+    ],
+    "featured": true
+  },
+  {
+    "slug": "perbaikan-dapur-sekolah",
+    "title": "Perbaikan Dapur Sekolah Al-Amin",
+    "category": "Renovasi",
+    "duration": "2 minggu",
+    "year": 2024,
+    "location": "Cibinong",
+    "description": "Perbaikan dapur sekolah mencakup penggantian keramik dinding, instalasi saluran air baru, dan pemasangan exhaust fan.",
+    "cover": "/images/projects/dapur-sekolah-cover.jpg",
+    "gallery": [
+      "/images/projects/dapur-sekolah-1.jpg",
+      "/images/projects/dapur-sekolah-2.jpg"
+    ],
+    "featured": true
+  },
+  {
+    "slug": "pagar-dan-kanopi-pak-herman",
+    "title": "Pagar & Kanopi Pak Herman",
+    "category": "Pagar & Kanopi",
+    "duration": "1 bulan",
+    "year": 2024,
+    "location": "Citeureup",
+    "description": "Pembuatan pagar besi hollow galvanis dan kanopi polycarbonate untuk carport, termasuk pondasi tiang dan pengecatan anti-karat.",
+    "cover": "/images/projects/pagar-herman-cover.jpg",
+    "gallery": [
+      "/images/projects/pagar-herman-1.jpg",
+      "/images/projects/pagar-herman-2.jpg"
+    ],
+    "featured": false
+  },
+  {
+    "slug": "plafon-dan-lantai-masjid",
+    "title": "Plafon & Lantai Masjid Al-Hikmah",
+    "category": "Renovasi",
+    "duration": "4 bulan",
+    "year": 2023,
+    "location": "Citapen",
+    "description": "Pemasangan plafon GRC board sepanjang 200m² dan penggantian lantai keramik masjid, dikerjakan bersama tim 5 orang.",
+    "cover": "/images/projects/masjid-cover.jpg",
+    "gallery": [
+      "/images/projects/masjid-1.jpg",
+      "/images/projects/masjid-2.jpg",
+      "/images/projects/masjid-3.jpg"
+    ],
+    "featured": false
+  },
+  {
+    "slug": "kamar-mandai-tambah",
+    "title": "Penambahan Kamar Mandi Pak Sofyan",
+    "category": "Renovasi",
+    "duration": "3 minggu",
+    "year": 2023,
+    "location": "Bogor Selatan",
+    "description": "Penambahan kamar mandi baru di lantai 1, mencakup pembobokan dinding, instalasi pipa, waterproofing, dan pemasangan keramik mozaik.",
+    "cover": "/images/projects/kamar-mandi-cover.jpg",
+    "gallery": [
+      "/images/projects/kamar-mandi-1.jpg",
+      "/images/projects/kamar-mandi-2.jpg"
+    ],
+    "featured": false
+  }
+]
