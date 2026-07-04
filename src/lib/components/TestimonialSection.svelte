@@ -1,50 +1,45 @@
-<section class="section-block bg-concrete">
+<script>
+  import { reveal } from '$lib/actions/reveal.js';
+</script>
+
+<section class="section-block bg-concrete" use:reveal>
   <div class="container-app">
-    <div class="section-header">
-      <span class="section-label section-label--yellow">Testimoni</span>
+    <div class="section-header section-header--left" style="max-width: 36rem">
+      <span class="section-label">Testimoni</span>
       <h2 class="section-title">Apa Kata <span class="text-orange">Mereka</span></h2>
     </div>
 
-    <p class="scroll-hint">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M5 12h14M12 5l7 7-7 7"/>
-      </svg>
-      Geser untuk baca testimoni lainnya
-    </p>
-
-    <div class="card-carousel card-carousel--3">
-      <div class="testimonial-card">
-        <p class="testimonial-card__quote">
-          "Dita ngerjain renovasi dapur saya — rapi, tepat waktu, dan gak banyak alasan.
-          Paling penting: harga sesuai yang disepakati di awal. Saya udah rekomendasiin ke tetangga."
-        </p>
-        <div class="testimonial-card__footer">
-          <span class="text-orange font-semibold text-sm">Bu Rina</span>
-          <span class="text-muted-fg text-xs block mt-1">Pemilik Rumah, Citapen</span>
-        </div>
+    <article class="testimonial-featured">
+      <p class="testimonial-featured__quote">
+        “Dita ngerjain renovasi dapur saya: rapi, tepat waktu, dan gak banyak alasan.
+        Harga sesuai yang disepakati di awal. Saya udah rekomendasiin ke tetangga.”
+      </p>
+      <div class="testimonial-featured__footer">
+        <span class="text-orange font-semibold text-sm">Bu Rina</span>
+        <span class="text-muted-fg text-xs block mt-1">Pemilik Rumah, Citapen</span>
       </div>
+    </article>
 
-      <div class="testimonial-card">
-        <p class="testimonial-card__quote">
-          "Saya kontraktor dan sering pakai tenaga Dita buat proyek finishing.
-          Dia bisa diandalkan — datang tepat waktu, kerja bersih, hasilnya konsisten. Saya hemat waktu gak perlu mikirin kualitas."
+    <div class="testimonial-compact-grid">
+      <article class="testimonial-compact">
+        <p class="testimonial-compact__quote">
+          “Kontraktor sering pakai tenaga Dita buat finishing. Datang tepat waktu, kerja bersih, hasil konsisten.”
         </p>
-        <div class="testimonial-card__footer">
+        <div class="testimonial-compact__footer">
           <span class="text-orange font-semibold text-sm">Pak Hendra</span>
           <span class="text-muted-fg text-xs block mt-1">Kontraktor, Bogor Timur</span>
         </div>
-      </div>
+      </article>
 
-      <div class="testimonial-card">
-        <p class="testimonial-card__quote">
-          "Awalnya ragu pakai tukang lepas, tapi setelah liat hasil kerja Dita — saya langsung percaya.
-          Pasang keramik dan plafon rapih banget. Komunikasi lancar, gak drama."
+      <article class="testimonial-compact">
+        <p class="testimonial-compact__quote">
+          “Awalnya ragu pakai tukang lepas. Setelah liat hasil keramik dan plafon, langsung percaya. Komunikasi lancar.”
         </p>
-        <div class="testimonial-card__footer">
+        <div class="testimonial-compact__footer">
           <span class="text-orange font-semibold text-sm">Pak Sofyan</span>
           <span class="text-muted-fg text-xs block mt-1">Pemilik Rumah, Bogor Selatan</span>
         </div>
-      </div>
+      </article>
     </div>
   </div>
 </section>

@@ -23,7 +23,7 @@
 
 <svelte:window onkeydown={(e) => e.key === 'Escape' && closeMenu()} />
 
-<header class="fixed top-0 left-0 w-full z-50 bg-raised/95 backdrop-blur-md border-b border-border shadow-sm">
+<header class="fixed top-0 left-0 w-full z-50 bg-raised/95 backdrop-blur-md border-b-2 border-ink">
   <div class="container-app">
     <div class="flex h-16 items-center justify-between">
       <a href="/" class="flex items-center gap-1.5 sm:gap-2" onclick={closeMenu}>
@@ -48,12 +48,12 @@
           rel="noopener noreferrer"
           class="nav-cta"
         >
-          WhatsApp
+          Chat WhatsApp
         </a>
       </nav>
 
       <button
-        class="md:hidden flex flex-col justify-center gap-1.5 p-2.5 -mr-1 rounded-lg active:bg-muted transition-colors"
+        class="md:hidden flex flex-col justify-center gap-1.5 p-2.5 -mr-1 rounded active:bg-muted transition-colors"
         onclick={() => mobileOpen = !mobileOpen}
         aria-label={mobileOpen ? 'Tutup menu' : 'Buka menu'}
         aria-expanded={mobileOpen}
@@ -96,7 +96,7 @@
         class="nav-cta w-full mt-4"
         onclick={closeMenu}
       >
-        WhatsApp
+        Chat WhatsApp
       </a>
     </div>
   {/if}

@@ -1,5 +1,5 @@
 <script>
-  let { slug, title, category, duration, cover } = $props();
+  let { slug, title, category, duration, cover, featured = false } = $props();
 </script>
 
 <a href="/portofolio/{slug}" class="project-card group block h-full">
@@ -25,9 +25,15 @@
   </div>
 
   <div class="project-card__body">
-    <h3 class="font-heading text-base sm:text-lg text-fg group-hover:text-orange transition-colors leading-tight">
+    <h3
+      class="font-heading text-fg group-hover:text-orange transition-colors leading-tight"
+      class:text-xl={featured}
+      class:sm:text-2xl={featured}
+      class:text-base={!featured}
+      class:sm:text-lg={!featured}
+    >
       {title}
     </h3>
-    <span class="text-muted-fg text-sm mt-1.5 block">⏱ {duration}</span>
+    <span class="text-muted-fg text-sm mt-1.5 block">{duration}</span>
   </div>
 </a>

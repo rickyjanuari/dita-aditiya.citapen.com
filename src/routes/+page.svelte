@@ -7,8 +7,11 @@
   import TestimonialSection from '$lib/components/TestimonialSection.svelte';
   import ProjectCard from '$lib/components/ProjectCard.svelte';
   import projects from '$lib/data/projects.json';
+  import { reveal } from '$lib/actions/reveal.js';
 
   const featuredProjects = projects.filter(p => p.featured).slice(0, 3);
+  const leadProject = featuredProjects[0];
+  const sideProjects = featuredProjects.slice(1);
   const whatsappUrl = 'https://wa.me/6281234567890?text=Halo%20Dita%2C%20saya%20mau%20tanya%20soal%20renovasi%20...';
 </script>
 
@@ -22,26 +25,33 @@
 
 <TimelineSection />
 
-<section class="section-block bg-raised">
+<section class="section-block bg-raised" use:reveal>
   <div class="container-app">
-    <div class="section-divider"></div>
-    <div class="hazard-stripe"></div>
+    <div class="hazard-stripe hazard-stripe--always"></div>
 
-    <div class="section-header">
+    <div class="section-header section-header--left" style="max-width: 36rem">
       <span class="section-label">Portofolio</span>
       <h2 class="section-title">Proyek <span class="text-orange">Unggulan</span></h2>
-      <p class="section-desc">Beberapa proyek yang sudah saya selesaikan. Klik untuk melihat detail lengkap.</p>
+      <p class="section-desc section-desc--left">
+        Beberapa proyek yang sudah saya selesaikan. Klik untuk melihat detail lengkap.
+      </p>
     </div>
 
-    <p class="scroll-hint">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M5 12h14M12 5l7 7-7 7"/>
-      </svg>
-      Geser untuk lihat proyek lainnya
-    </p>
+    <div class="portfolio-featured">
+      {#if leadProject}
+        <div class="portfolio-featured__lead">
+          <ProjectCard
+            slug={leadProject.slug}
+            title={leadProject.title}
+            category={leadProject.category}
+            duration={leadProject.duration}
+            cover={leadProject.cover}
+            featured={true}
+          />
+        </div>
+      {/if}
 
-    <div class="card-carousel card-carousel--3">
-      {#each featuredProjects as project}
+      {#each sideProjects as project}
         <ProjectCard
           slug={project.slug}
           title={project.title}
@@ -62,11 +72,8 @@
 
 <TestimonialSection />
 
-<section class="section-block bg-blueprint border-t border-border">
+<section class="cta-band" use:reveal>
   <div class="container-app container-app--narrow text-center">
-    <div class="section-divider"></div>
-    <div class="hazard-stripe"></div>
-
     <div class="stack items-center">
       <h2 class="section-title section-title--lg">
         Siap Renovasi atau <span class="text-orange">Bangun Rumah</span> Impian Anda?
@@ -75,11 +82,11 @@
         Konsultasi gratis, tanpa biaya. Saya dengarkan dulu kebutuhan Anda, baru kita buat rencana.
       </p>
       <div class="btn-group btn-group--center w-full max-w-md">
-        <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" class="btn-primary">
-          Chat WhatsApp Sekarang
+        <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" class="btn-primary btn-primary--on-orange">
+          Chat WhatsApp
         </a>
-        <a href="/kontak" class="btn-secondary">
-          Lihat Info Kontak
+        <a href="/kontak" class="btn-secondary btn-secondary--on-orange">
+          Info Kontak
         </a>
       </div>
     </div>

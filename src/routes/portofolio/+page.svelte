@@ -1,6 +1,7 @@
 <script>
   import ProjectCard from '$lib/components/ProjectCard.svelte';
   import projects from '$lib/data/projects.json';
+  import { reveal } from '$lib/actions/reveal.js';
 
   let activeCategory = $state('Semua');
 
@@ -14,16 +15,15 @@
 </script>
 
 <svelte:head>
-  <title>Portofolio — Dita Aditiya</title>
+  <title>Portofolio - Dita Aditiya</title>
   <meta name="description" content="Portofolio proyek renovasi dan pembangunan oleh Dita Aditiya, tukang bangunan profesional area Bogor." />
 </svelte:head>
 
-<section class="page-inner bg-surface">
+<section class="page-inner bg-blueprint" use:reveal>
   <div class="container-app">
-    <div class="section-header">
-      <span class="section-label">Portofolio</span>
+    <div class="section-header section-header--left" style="max-width: 40rem">
       <h1 class="section-title section-title--lg">Semua <span class="text-orange">Proyek</span></h1>
-      <p class="section-desc">
+      <p class="section-desc section-desc--left">
         Dokumentasi hasil kerja dari berbagai proyek yang sudah saya selesaikan.
         Dari renovasi kecil hingga pembangunan penuh.
       </p>

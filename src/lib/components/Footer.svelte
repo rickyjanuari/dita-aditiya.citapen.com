@@ -13,15 +13,15 @@
   ];
 </script>
 
-<footer class="bg-concrete border-t border-border pb-4 md:pb-0">
-  <div class="hazard-stripe hazard-stripe--footer"></div>
+<footer class="bg-concrete border-t-2 border-ink pb-4 md:pb-0">
+  <div class="hazard-stripe hazard-stripe--footer hazard-stripe--always"></div>
 
   <div class="container-app py-14 sm:py-20">
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12">
       <div class="sm:col-span-2 md:col-span-1">
         <span class="font-heading text-2xl sm:text-3xl text-orange">DITA ADITIYA</span>
         <p class="mt-4 text-muted-fg text-sm leading-relaxed max-w-sm">
-          Tukang bangunan profesional — spesialis renovasi dan pembangunan skala kecil-menengah.
+          Tukang bangunan profesional, spesialis renovasi dan pembangunan skala kecil-menengah.
           Melayani area Bogor dan sekitarnya.
         </p>
       </div>
@@ -39,7 +39,7 @@
         <h4 class="font-heading text-base sm:text-lg text-fg mb-4">Keahlian</h4>
         <div class="flex flex-wrap gap-2">
           {#each skills as skill}
-            <span class="bg-raised text-muted-fg text-xs px-3 py-1.5 rounded-full border border-border">
+            <span class="bg-raised text-muted-fg text-xs px-3 py-1.5 border-2 border-ink rounded-sm">
               {skill}
             </span>
           {/each}
@@ -47,7 +47,7 @@
       </div>
     </div>
 
-    <div class="mt-12 sm:mt-14 pt-6 border-t border-border text-center text-muted-fg text-xs">
+    <div class="mt-12 sm:mt-14 pt-6 border-t-2 border-ink/15 text-center text-muted-fg text-xs">
       &copy; {new Date().getFullYear()} Dita Aditiya. Dibuat oleh Ricky Januari.
     </div>
   </div>

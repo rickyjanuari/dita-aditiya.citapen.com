@@ -1,21 +1,22 @@
 <script>
+  import { reveal } from '$lib/actions/reveal.js';
+
   const whatsappUrl = 'https://wa.me/6281234567890?text=Halo%20Dita%2C%20saya%20mau%20tanya%20soal%20renovasi%20...';
   const phoneNumber = '0812-3456-7890';
   const email = 'dita@citapen.com';
 </script>
 
 <svelte:head>
-  <title>Kontak — Dita Aditiya</title>
+  <title>Kontak - Dita Aditiya</title>
   <meta name="description" content="Hubungi Dita Aditiya untuk konsultasi renovasi dan pembangunan. Area Bogor, Citapen, dan sekitarnya." />
 </svelte:head>
 
-<section class="page-inner bg-surface">
+<section class="page-inner bg-blueprint" use:reveal>
   <div class="container-app container-app--medium">
-    <div class="section-header">
-      <span class="section-label">Kontak</span>
+    <div class="section-header section-header--left" style="max-width: 40rem">
       <h1 class="section-title section-title--lg">Mari <span class="text-orange">Ngobrol</span></h1>
-      <p class="section-desc">
-        Ceritakan kebutuhan renovasi atau pembangunan Anda. Saya siap bantu — tanpa tekanan, tanpa biaya konsultasi.
+      <p class="section-desc section-desc--left">
+        Ceritakan kebutuhan renovasi atau pembangunan Anda. Saya siap bantu, tanpa tekanan, tanpa biaya konsultasi.
       </p>
     </div>
 
@@ -32,7 +33,7 @@
           <div class="flex-1 min-w-0">
             <h3 class="font-heading text-base sm:text-lg text-fg group-hover:text-orange transition-colors">WhatsApp</h3>
             <p class="text-muted-fg text-sm mt-1">{phoneNumber}</p>
-            <span class="text-orange text-xs mt-2 block">Klik untuk chat langsung →</span>
+            <span class="text-orange text-xs mt-2 block">Klik untuk chat langsung</span>
           </div>
         </a>
 
@@ -67,9 +68,7 @@
         <h2 class="font-heading text-xl sm:text-2xl text-fg mb-6">Area Layanan</h2>
 
         <div class="info-panel">
-          <h3 class="font-heading text-base sm:text-lg text-fg flex items-center gap-2">
-            <span class="text-orange">📍</span> Area Prioritas
-          </h3>
+          <h3 class="font-heading text-base sm:text-lg text-fg">Area Prioritas</h3>
           <div class="flex flex-wrap gap-2 mt-5">
             <span class="area-tag">Citapen</span>
             <span class="area-tag">Bogor Timur</span>
@@ -81,9 +80,7 @@
         </div>
 
         <div class="info-panel">
-          <h3 class="font-heading text-base sm:text-lg text-fg flex items-center gap-2">
-            <span class="text-safety-yellow">ℹ️</span> Area Tambahan
-          </h3>
+          <h3 class="font-heading text-base sm:text-lg text-fg">Area Tambahan</h3>
           <p class="text-muted-fg text-sm mt-4 leading-relaxed">
             Area di luar prioritas tetap bisa dijangkau dengan penyesuaian biaya transportasi.
             Hubungi saya untuk diskusi lebih lanjut.
@@ -91,6 +88,12 @@
           <p class="text-muted-fg text-sm mt-3 leading-relaxed">
             Estimasi survei lokasi gratis untuk area Prioritas.
           </p>
+        </div>
+
+        <div class="mt-8">
+          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" class="btn-primary w-full sm:w-auto">
+            Chat WhatsApp
+          </a>
         </div>
       </div>
     </div>
